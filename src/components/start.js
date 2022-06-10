@@ -81,7 +81,7 @@
       return { buttons, total }
     }
   
-    if (validGame({ red, green })) {
+    if (validGame()) {
       return { buttons, total }
     }
     return createGame(level)
