@@ -76,6 +76,26 @@
       }
       return agg
     }, 0)
+    
+  //  
+    const hasPositivePointer = false;
+    const hasColorRed = false;
+
+    for(let j = 0; j < buttons; j++) {
+        if (button.point < 0) {
+            hasPositivePointer = true
+        }
+
+        if (button.color == red) {
+            hasColorRed = true
+        }
+
+        if (hasColorRed && hasColorRed == true) {
+          return true
+        }
+    }
+     return false;
+   //
   
     if (level < 2) {
       return { buttons, total }
