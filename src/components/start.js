@@ -82,11 +82,11 @@
     const hasColorRed = false;
 
     for(let j = 0; j < buttons; j++) {
-        if (button.point < 0) {
+        if (buttons.point < 0) {
             hasPositivePointer = true
         }
 
-        if (button.color == red) {
+        if (buttons.color == 'red') {
             hasColorRed = true
         }
 
