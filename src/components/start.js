@@ -55,7 +55,26 @@
    *
    */
   
-  const validGame = () => true
+  function validGame(buttons) {
+    const hasPositivePointer = false;
+    const hasColorRed = false;
+
+    for(let j = 0; j < buttons; j++) {
+
+        if (buttons[j].point > 0) {
+            hasPositivePointer = true
+        }
+
+        if (buttons[j].color == 'red') {
+            hasColorRed = true
+        }
+
+        if (hasColorRed && hasPositivePointer == true) {
+          return true
+        }
+    }
+     return false;
+  }
   
   export const createGame = (currentLevel) => {
     let level = currentLevel
@@ -76,32 +95,13 @@
       }
       return agg
     }, 0)
-    
-  //  
-    const hasPositivePointer = false;
-    const hasColorRed = false;
 
-    for(let j = 0; j < buttons; j++) {
-        if (buttons.point < 0) {
-            hasPositivePointer = true
-        }
-
-        if (buttons.color == 'red') {
-            hasColorRed = true
-        }
-
-        if (hasColorRed && hasColorRed == true) {
-          return true
-        }
-    }
-     return false;
-   //
-  
     if (level < 2) {
       return { buttons, total }
     }
-  
-    if (validGame()) {
+    console.log(validGame(buttons), buttons)
+    
+    if (validGame(buttons)) {
       return { buttons, total }
     }
     return createGame(level)
