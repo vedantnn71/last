@@ -30,11 +30,12 @@ export default function App() {
         <Game updateRound={() => setRound(round + 1)} />
       )}
       <div className="grid grid-cols-4 gap-6">
-        {(btns || []).map(({ color, point }) => (
+        {(btns || []).map(({ color, point }, index) => (
           <BullsEye
             score={score}
             isDisabled={score === perfectScore} // hindre brukere i å samhandle med brukergrensesnittet hvis de allerede har oppnådd det maksimale antallet
             eyeColor={color}
+            key={`BullsEye-${index}`}
             changeScore={() => {
               setScore(score + point)
             }}
